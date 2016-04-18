@@ -1,38 +1,38 @@
 ============
-vmod_dgram
+vmod_gelf
 ============
 
 ----------------------
-Varnish 4.0 Dgram Module
+Varnish 4.0 Gelf Module
 ----------------------
 
 :Author: Matthew M. Boedicker
 :Author: Maksim Naumov
-:Date: 2015-08-05
-:Version: 0.2
+:Author: Gregory Boddin 
+:Date: 2016-04-18
+:Version: 0.1
 :Manual section: 3
 
 SYNOPSIS
 ========
 
-import dgram;
+import gelf;
 
 sub vcl_deliver {
-  dgram.send(req.request + " " + req.http.host + req.url, "127.0.0.1", 12345);
+  gelf.send("{...json formated packet...}", "127.0.0.1", 12345);
 }
 
 DESCRIPTION
 ===========
 
-Varnish module to send arbitrary data over UDP from VCL.
+Varnish module to send gelf formatted packets over UDP from VCL.
 
-The original use case is a hit counter that will send the URL served for
-every request to a simple UDP server for further processing.
+The module goal is to log varnish events in Logstash/Graylog or any logging software supporting the GELF protocol.
 
 FUNCTIONS
 =========
 
-dgram
+gelf
 -----
 
 Prototype
@@ -46,7 +46,7 @@ Description
 Example
         ::
 
-                dgram.send("Hello world", "127.0.0.1", 12345);
+                gelf.send("Hello world", "127.0.0.1", 12345);
 
 INSTALLATION
 ============

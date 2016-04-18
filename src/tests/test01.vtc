@@ -1,4 +1,4 @@
-varnishtest "Test dgram vmod"
+varnishtest "Test gelf vmod"
 
 server s1 {
     rxreq
@@ -6,7 +6,7 @@ server s1 {
 } -start
 
 varnish v1 -vcl {
-    import dgram from "${topbuild}/src/.libs/libvmod_dgram.so";
+    import -gelf from "${topbuild}/src/.libs/libvmod_gelf.so";
 
     backend default {
         .host = "${s1_addr}";
@@ -14,7 +14,7 @@ varnish v1 -vcl {
     }
 
     sub vcl_deliver {
-        dgram.send_dgram("hi", "127.0.0.1", 12345);
+        gelf.send_-gelf("{}", "127.0.0.1", 12345);
     }
 } -start
 

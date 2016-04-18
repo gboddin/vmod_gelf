@@ -1,8 +1,8 @@
 AC_PREREQ(2.64)
 AC_COPYRIGHT([Copyright (c) 2011-2015 Varnish Software AS])
-AC_INIT([libvmod-dgram], [trunk])
+AC_INIT([libvmod-gelf], [trunk])
 AC_CONFIG_MACRO_DIR([m4])
-AC_CONFIG_SRCDIR(src/vmod_dgram.vcc)
+AC_CONFIG_SRCDIR(src/vmod_gelf.vcc)
 AC_CONFIG_HEADERS(config.h)
 
 AC_CANONICAL_SYSTEM

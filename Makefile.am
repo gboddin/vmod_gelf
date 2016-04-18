@@ -5,15 +5,15 @@ SUBDIRS = src
 DISTCHECK_CONFIGURE_FLAGS = \
 	VMOD_DIR='$${libdir}/varnish/vmods'
 
-EXTRA_DIST = README.rst LICENSE vmod-dgram.spec
+EXTRA_DIST = README.rst LICENSE vmod-gelf.spec
 
 doc_DATA = README.rst LICENSE
 
-dist_man_MANS = vmod_dgram.3
+dist_man_MANS = vmod_gelf.3
 
 MAINTAINERCLEANFILES = $(dist_man_MANS)
 
-vmod_dgram.3: README.rst
+vmod_gelf.3: README.rst
 
 %.1 %.2 %.3 %.4 %.5 %.6 %.7 %.8 %.9:
 if HAVE_RST2MAN

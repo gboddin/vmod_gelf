@@ -1,10 +1,10 @@
 Summary: UDP client VMOD for Varnish.
-Name: vmod-dgram
+Name: vmod-gelf
 Version: 0.2
 Release: 1%{?dist}
 License: BSD
 Group: System Environment/Daemons
-Source0: libvmod-dgram.tar.gz
+Source0: libvmod-gelf.tar.gz
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 Requires: varnish >= 4.0.2
 BuildRequires: make
@@ -16,7 +16,7 @@ BuildRequires: varnish-libs-devel >= 4.0.2
 UDP client VMOD for Varnish
 
 %prep
-%setup -n libvmod-dgram
+%setup -n libvmod-gelf
 
 %build
 %configure --prefix=/usr/
